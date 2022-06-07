@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mobcar/components/drawer_menu.dart';
 import 'package:mobcar/shared/colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,8 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerMenu(),
       backgroundColor: Colors.black,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text(
           'MOBCAR',
           style: TextStyle(color: pColor, fontWeight: FontWeight.w100),
@@ -23,7 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Builder(builder: (BuildContext context) {
             return IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
               icon: Icon(
                 Icons.menu_open_rounded,
                 color: pColor,

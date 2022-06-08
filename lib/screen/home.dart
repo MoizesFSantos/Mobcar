@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mobcar/components/add_new_component.dart';
 import 'package:mobcar/components/drawer_menu.dart';
 import 'package:mobcar/shared/colors.dart';
 
@@ -62,7 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.black,
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      addNewDialog(context);
+                    },
                     child: Text(
                       'Add new',
                       style: TextStyle(color: Colors.white),
